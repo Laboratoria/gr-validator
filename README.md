@@ -2,7 +2,9 @@
 
 # __gr-validator__
 
-Take a student repositorie of Laboratoria, clone it and test it with Laboratoria's tests/linter in cloud and send results to Laboratoria's DB.
+Take a student repositorie of Laboratoria, clone it and test it with `Laboratoria's` `tests/linter in Google Cloud Functions` and send results to Laboratoria's DB.
+
+__Important:__ gr-validator work with a `Laboratoria's` private tests repositorie in git hub, he search him with project id with `-test` suffixe, this repositorie need a standard structure you can see this structure in: https://github.com/Laboratoria/pblms-cipher-test (private repo `Laboratoria's` permissions needed)
 
 ## __Install__
 
@@ -12,7 +14,7 @@ Using NPM:
 
 Using yarn:
 
-> $> npm install --save Laboratoria/gr-validator
+> $> yarn add Laboratoria/gr-validator
 
 ## __Usage__
 
@@ -20,9 +22,11 @@ Using yarn:
 
 const validator = require('gr-validator')
 
-validator(data, firestoreAccess, githubToken, isFirebaseEnv);
+validator(data, firestoreAccess, githubToken);
 
 ```
+
+__Important:__ if you are using `gr-validator` in local environment you need to set an environment var `GITHUB_TOKEN` with Github token with `laboratoria's` read permissions
 
 ## __API__
 
@@ -52,15 +56,9 @@ __githubToken__
 
 Type: string
 
-Content: Github token with Laboratoria's read permissions
+Content: Github token with `Laboratoria's` read permissions
 
-__isFirebaseEnv__
-
-Type: Boolean
-
-Content: Make false if you are using `firebase serve` (Local Mode)
-
-Default: True
+default: if `githubToken` are undefined, `gr-validator` search an take the value in `GITHUB_TOKEN` of environment variables
 
 ## __Requisites__
 
