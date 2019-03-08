@@ -2,7 +2,7 @@
 
 # __gr-validator__
 
-Take a student repositorie of laboratoria, clone it and test it with laboratoria's tests/linter in cloud and send results to Laboratoria's DB.
+Take a student repositorie of Laboratoria, clone it and test it with Laboratoria's tests/linter in cloud and send results to Laboratoria's DB.
 
 ## __Install__
 
@@ -52,7 +52,7 @@ __githubToken__
 
 Type: string
 
-Content: Github token with laboratoria's read permissions
+Content: Github token with Laboratoria's read permissions
 
 __isFirebaseEnv__
 
@@ -66,7 +66,7 @@ Default: True
 
 Upgrade memory to `2 GB` and timeout at `540 seconds` of function in `Google Cloud Platform`
 
-link: https://console.cloud.google.com/functions/
+Link: [Functions](https://console.cloud.google.com/functions/)
 
 __How?__ Click on link, choose your project, click on the function are using
 `gr-validator` in my case `firestoreProjectsOnWrite`, if you see `Memory Allocated`
