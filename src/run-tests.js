@@ -1,7 +1,7 @@
 const { exec } = require('child_process');
 
 const linterMess = (finalDirectory, tmp) => new Promise((resolve) => {
-  
+
   const cmd = `cd ${tmp}/${finalDirectory} ; rm -rf .eslintrc ; ` +
     'cp LABORATORIA_STAFF_TEST/laboratoria_test/.eslintrc . ; ' +
     'node ./node_modules/eslint/bin/eslint.js -f json .js src/ test/';
@@ -21,7 +21,7 @@ const linterMess = (finalDirectory, tmp) => new Promise((resolve) => {
 });
 
 const unitHackerTestMess = (finalDirectory, tmp) => new Promise((resolve) => {
-  
+
   const cmd = `cd ${tmp}/${finalDirectory} && node ./node_modules/jest/bin/jest.js ` +
     '--json LABORATORIA_STAFF_TEST/laboratoria_test/cipher-hacker.spec.js 2>&-';
   const data = {};

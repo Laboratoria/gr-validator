@@ -12,10 +12,15 @@ module.exports = (pathData, db, githubToken) => {
   const gitObj = URL.parse(pathData.repo, true);
   const directory = gitObj.pathname.split('/');
   const finalDirectory = (directory[1] + directory[2]);
+  const token = (githubToken || process.env.GITHUB_TOKEN);
+
+  if (!token) {
+    return updateStatus(null, pathData, db, 'failed');
+  }
 
   console.log('starting ada', pathData.repo);
   return (
-    clone(pathData.repo, tmp, finalDirectory, githubToken)
+    clone(pathData.repo, tmp, finalDirectory, token)
       .then(() => runInstall(finalDirectory, tmp))
       .then(() => updateStatus(null, pathData, db, 'testing'))
       .then(() => runTests(finalDirectory, tmp))
