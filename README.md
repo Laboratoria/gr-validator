@@ -2,7 +2,7 @@
 
 # __gr-validator__
 
-Take a student repositorie of Laboratoria, clone it and test it with `Laboratoria's` tests/linter in google cloud functions and send results to Laboratoria's DB.
+Take a student repositorie of Laboratoria, clone it and test it with `Laboratoria's` `tests/linter in Google Cloud Functions` and send results to Laboratoria's DB.
 
 __Important:__ gr-validator work with a `Laboratoria's` private tests repositorie in git hub, he search him with project id with `-test` suffixe, this repositorie need a standard structure you can see this structure in: https://github.com/Laboratoria/pblms-cipher-test (private repo `Laboratoria's` permissions needed)
 
@@ -56,7 +56,7 @@ __githubToken__
 
 Type: string
 
-Content: Github token with `laboratoria's` read permissions
+Content: Github token with `Laboratoria's` read permissions
 
 default: if `githubToken` are undefined, `gr-validator` search an take the value in `GITHUB_TOKEN` of environment variables
 
@@ -64,7 +64,7 @@ default: if `githubToken` are undefined, `gr-validator` search an take the value
 
 Upgrade memory to `2 GB` and timeout at `540 seconds` of function in `Google Cloud Platform`
 
-link: https://console.cloud.google.com/functions/
+Link: [Functions](https://console.cloud.google.com/functions/)
 
 __How?__ Click on link, choose your project, click on the function are using
 `gr-validator` in my case `firestoreProjectsOnWrite`, if you see `Memory Allocated`
